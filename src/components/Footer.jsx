@@ -1,3 +1,5 @@
+import { asset } from '../utils/asset'
+
 const NAV_LINKS = [
   { href: '#hero', label: 'Home' },
   { href: '#about', label: 'About' },
@@ -33,7 +35,7 @@ export default function Footer() {
           <div className="footer-gmrt">
             <span className="gmrt-label">Part of</span>
             <a href="https://www.instagram.com/gmrtugm" target="_blank" rel="noopener noreferrer">
-                <img src="/gmrt-logo.png" alt="GMRT" className="gmrt-logo" />
+                <img src={asset('gmrt-logo.png')} alt="GMRT" className="gmrt-logo" />
             </a>
           </div>
         </div>

@@ -1,14 +1,15 @@
 import { useScrollRevealGroup } from '../hooks/useScrollReveal'
 import useScrollReveal from '../hooks/useScrollReveal'
 import { useLightbox } from '../hooks/useLightbox'
+import { asset } from '../utils/asset'
 
 const GALLERY_ITEMS = [
-  { id: 1, src: '/dokum/foto_tim.webp', alt: 'Team Fukuro', label: 'Team Fukuro', className: 'gallery-large' },
-  { id: 2, src: '/dokum/robot1.webp', alt: 'Fukuro Robot', label: 'Fukuro Robot' },
-  { id: 3, src: '/dokum/dribble.webp', alt: 'Dribble Test', label: 'Dribble Test' },
-  { id: 4, src: '/dokum/developing.webp', alt: 'Development', label: 'Development' },
-  { id: 5, src: '/dokum/learning.webp', alt: 'Learning', label: 'Learning' },
-  { id: 6, src: '/dokum/robot2.webp', alt: 'Fukuro Robot 2', label: 'Fukuro Robot 2', className: 'gallery-mobile-only' },
+  { id: 1, src: 'dokum/foto_tim.webp', alt: 'Team Fukuro', label: 'Team Fukuro', className: 'gallery-large' },
+  { id: 2, src: 'dokum/robot1.webp', alt: 'Fukuro Robot', label: 'Fukuro Robot' },
+  { id: 3, src: 'dokum/dribble.webp', alt: 'Dribble Test', label: 'Dribble Test' },
+  { id: 4, src: 'dokum/developing.webp', alt: 'Development', label: 'Development' },
+  { id: 5, src: 'dokum/learning.webp', alt: 'Learning', label: 'Learning' },
+  { id: 6, src: 'dokum/robot2.webp', alt: 'Fukuro Robot 2', label: 'Fukuro Robot 2', className: 'gallery-mobile-only' },
 ]
 
 export default function Gallery() {
@@ -29,9 +30,9 @@ export default function Gallery() {
             <div
               className={`gallery-item reveal${item.className ? ' ' + item.className : ''}`}
               key={item.id}
-              onClick={() => open(item.src, item.alt)}
+              onClick={() => open(asset(item.src), item.alt)}
             >
-              <img src={item.src} alt={item.alt} />
+              <img src={asset(item.src)} alt={item.alt} />
               <div className="gallery-overlay">
                 <span>{item.label}</span>
               </div>

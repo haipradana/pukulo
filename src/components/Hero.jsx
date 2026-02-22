@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import useScrollReveal from '../hooks/useScrollReveal'
+import { asset } from '../utils/asset'
 
 function ParticleCanvas() {
   const canvasRef = useRef(null)
@@ -163,7 +164,7 @@ export default function Hero() {
         </div>
         <div className="hero-image reveal" ref={r5}>
           <div className="robot-glow" />
-          <img src="/robot.png" alt="Robot Fukuro" />
+          <img src={asset('robot.png')} alt="Robot Fukuro" />
         </div>
       </div>
       <div className="scroll-indicator">

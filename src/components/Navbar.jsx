@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useTheme } from '../hooks/useTheme'
+import { asset } from '../utils/asset'
 
 const NAV_LINKS = [
   { href: '#hero', label: 'Home' },
@@ -30,7 +31,7 @@ export default function Navbar() {
     <nav className={`navbar${scrolled ? ' scrolled' : ''}`}>
       <div className="nav-container">
         <a href="#hero" className="nav-logo" onClick={(e) => handleNav(e, '#hero')}>
-          <img src="/fukuro-logo-red.png" alt="Fukuro" className="nav-logo-img" />
+          <img src={asset('fukuro-logo-red.png')} alt="Fukuro" className="nav-logo-img" />
           <span className="nav-logo-text">
             <span className="logo-fuku">FUKU</span><span className="logo-ro">RO</span>
           </span>
